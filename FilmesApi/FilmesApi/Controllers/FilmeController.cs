@@ -1,4 +1,5 @@
-﻿using FilmesApi.Models;
+﻿using FilmesApi.Data;
+using FilmesApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilmesApi.Controllers
@@ -7,17 +8,18 @@ namespace FilmesApi.Controllers
     [Route("[controller]")]
     public class FilmeController : ControllerBase
     {
-        public static List<Filme> filmes = new List<Filme>();
+        private FilmeContext _context;
+
+        public FilmeController(FilmeContext context)
+        {
+            _context = context;
+        }
 
         [HttpPost]
         public IActionResult AdicionaFilme([FromBody] Filme filme)
         {
-            if(filme.Id == Guid.Empty)
-            {
-                filme.Id = Guid.NewGuid();
-            }
-
-            filmes.Add(filme);
+            _context.Filmes.Add(filme);
+            _context.SaveChanges();
             return CreatedAtAction(nameof(RecuperaFilmesPorId), new { id = filme.Id }, filme);
         }
 
@@ -25,14 +27,14 @@ namespace FilmesApi.Controllers
         [Route("RecuperaFilmes")]
         public IEnumerable<Filme> RecuperaFilmes()
         {
-            return filmes;
+            return _context.Filmes;
         }
 
         [HttpGet()]
         [Route("RecuperaFilmesPaginados")]
         public IEnumerable<Filme> RecuperaFilmesPaginados([FromQuery] int skip = 0, [FromQuery] int take = 10)
         {
-            return filmes.Skip(skip).Take(take);
+            return _context.Filmes.Skip(skip).Take(take);
         }
 
         [HttpGet()]
@@ -41,7 +43,7 @@ namespace FilmesApi.Controllers
         {
             try
             {
-                var filme = filmes.FirstOrDefault(f => f.Id == filmeId);
+                var filme = _context.Filmes.FirstOrDefault(f => f.Id == filmeId);
 
                 if (filme == null) return NotFound();
 

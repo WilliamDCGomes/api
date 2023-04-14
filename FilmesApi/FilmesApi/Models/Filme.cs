@@ -4,6 +4,14 @@ namespace FilmesApi.Models
 {
     public class Filme
     {
+        public Filme() 
+        {
+            if (Id == Guid.Empty)
+            {
+                Id = Guid.NewGuid();
+            }
+        }
+
         [Required(ErrorMessage = "O Id é um campo obrigatório")]
         public Guid Id { get; set; }
         [Required(ErrorMessage = "O título do filme é obrigatório")]

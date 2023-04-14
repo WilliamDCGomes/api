@@ -1,11 +1,15 @@
-﻿using System;
+﻿using FilmesApi.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 namespace FilmesApi.Data
 {
-	public class FilmeContext
+	public class FilmeContext : DbContext
 	{
-		public FilmeContext()
+		public FilmeContext(DbContextOptions<FilmeContext> opts) : base(opts)
 		{
 		}
-	}
+
+        public DbSet<Filme> Filmes { get; set; }
+    }
 }
 
