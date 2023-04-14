@@ -1,20 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FilmesApi.Models
+namespace FilmesApi.Data.Dtos
 {
-    public class Filme
+    public class CreateFilmeDto
     {
-        public Filme() 
-        {
-            if (Id == Guid.Empty)
-            {
-                Id = Guid.NewGuid();
-            }
-        }
-
-        [Key]
-        [Required(ErrorMessage = "O Id é um campo obrigatório")]
-        public Guid Id { get; set; }
         [Required(ErrorMessage = "O título do filme é obrigatório")]
         public string Titulo { get; set; }
         [Required(ErrorMessage = "O gênero do filme é obrigatório")]
