@@ -1,32 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\Api\\dot_net\\FilmesApi\\FilmesApi\\FilmesApi.csproj": {}
+    "/Users/williamdouglascostagomes/Desktop/Projetos/Api/alura/FilmesApi/FilmesApi/FilmesApi.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\Api\\dot_net\\FilmesApi\\FilmesApi\\FilmesApi.csproj": {
+    "/Users/williamdouglascostagomes/Desktop/Projetos/Api/alura/FilmesApi/FilmesApi/FilmesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\Api\\dot_net\\FilmesApi\\FilmesApi\\FilmesApi.csproj",
+        "projectUniqueName": "/Users/williamdouglascostagomes/Desktop/Projetos/Api/alura/FilmesApi/FilmesApi/FilmesApi.csproj",
         "projectName": "FilmesApi",
-        "projectPath": "C:\\Projetos\\Api\\dot_net\\FilmesApi\\FilmesApi\\FilmesApi.csproj",
-        "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\Api\\dot_net\\FilmesApi\\FilmesApi\\obj\\",
+        "projectPath": "/Users/williamdouglascostagomes/Desktop/Projetos/Api/alura/FilmesApi/FilmesApi/FilmesApi.csproj",
+        "packagesPath": "/Users/williamdouglascostagomes/.nuget/packages/",
+        "outputPath": "/Users/williamdouglascostagomes/Desktop/Projetos/Api/alura/FilmesApi/FilmesApi/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/williamdouglascostagomes/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -91,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }
