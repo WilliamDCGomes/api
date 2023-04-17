@@ -141,7 +141,7 @@ namespace FilmesApi.Controllers
         /// <response code="201">Caso a requisição seja feita com sucesso</response>
         [HttpDelete]
         [Route("Deletafilme")]
-        public IActionResult Deletafilme(Guid filmeId)
+        public IActionResult DeletaFilme(Guid filmeId)
         {
             try
             {
