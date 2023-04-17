@@ -8,7 +8,7 @@
             <summary>
             Adiciona um cinema ao banco de dados
             </summary>
-            <param name="filmeDto"></param>
+            <param name="cinemaDto"></param>
             <returns>IActionResult</returns>
             <response code="201">Caso a inserção seja feita com sucesso</response>
         </member>
@@ -52,6 +52,57 @@
             Deleta um cinema do banco de dados pelo id
             </summary>
             <param name="cinemaId"></param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso a requisição seja feita com sucesso</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.EnderecoController.AdicionaEndereco(FilmesApi.Data.Dtos.CreateEnderecoDto)">
+            <summary>
+            Adiciona um endereco ao banco de dados
+            </summary>
+            <param name="enderecoDto"></param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso a inserção seja feita com sucesso</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.EnderecoController.RecuperaEnderecos(System.Int32,System.Int32)">
+            <summary>
+            Recupera um ou mais enderecos do banco de dados, com opção de paginamento
+            </summary>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <returns>IEnumerable</returns>
+            <response code="200">Caso a requisição seja feita com sucesso</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.EnderecoController.RecuperaEnderecosPorId(System.Guid)">
+            <summary>
+            Recupera um endereco do banco de dados pelo id
+            </summary>
+            <param name="enderecoId"></param>
+            <returns>IActionResult</returns>
+            <response code="200">Caso a requisição seja feita com sucesso</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.EnderecoController.AtualizaEndereco(System.Guid,FilmesApi.Data.Dtos.UpdateEnderecoDto)">
+            <summary>
+            Atualiza um endereco do banco de dados pelo id
+            </summary>
+            <param name="enderecoId"></param>
+            <param name="enderecoDto"></param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso a requisição seja feita com sucesso</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.EnderecoController.AtualizaEnderecoParcial(System.Guid,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FilmesApi.Data.Dtos.UpdateEnderecoDto})">
+            <summary>
+            Atualiza partes de um endereco do banco de dados pelo id
+            </summary>
+            <param name="enderecoId"></param>
+            <param name="patch"></param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso a requisição seja feita com sucesso</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.EnderecoController.DeletaEndereco(System.Guid)">
+            <summary>
+            Deleta um endereco do banco de dados pelo id
+            </summary>
+            <param name="enderecoId"></param>
             <returns>IActionResult</returns>
             <response code="201">Caso a requisição seja feita com sucesso</response>
         </member>
@@ -116,6 +167,18 @@
             <inheritdoc />
         </member>
         <member name="M:FilmesApi.Migrations.CriandoTabelaDeFilme.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FilmesApi.Migrations.CinemaeEndereco">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmesApi.Migrations.CinemaeEndereco.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmesApi.Migrations.CinemaeEndereco.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmesApi.Migrations.CinemaeEndereco.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

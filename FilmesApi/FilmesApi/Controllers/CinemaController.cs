@@ -23,7 +23,7 @@ namespace FilmesApi.Controllers
         /// <summary>
         /// Adiciona um cinema ao banco de dados
         /// </summary>
-        /// <param name="filmeDto"></param>
+        /// <param name="cinemaDto"></param>
         /// <returns>IActionResult</returns>
         /// <response code="201">Caso a inserção seja feita com sucesso</response>
         [HttpPost]
