@@ -4,6 +4,7 @@ using FilmesApi.Data;
 using FilmesApi.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmesApi.Controllers
 {
@@ -41,15 +42,16 @@ namespace FilmesApi.Controllers
         /// <summary>
         /// Recupera um ou mais cinemas do banco de dados, com opção de paginamento
         /// </summary>
-        /// <param name="skip"></param>
-        /// <param name="take"></param>
+        /// <param name="enderecoId"></param>
         /// <returns>IEnumerable</returns>
         /// <response code="200">Caso a requisição seja feita com sucesso</response>
         [HttpGet()]
         [Route("RecuperaCinemas")]
-        public IEnumerable<ReadCinemaDto> RecuperaCinemas([FromQuery] int skip = 0, [FromQuery] int take = 10)
+        public IEnumerable<ReadCinemaDto> RecuperaCinemas([FromQuery] Guid? enderecoId = null)
         {
-            return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.Skip(skip).Take(take));
+            if (enderecoId == null) return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.ToList());
+
+            return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.FromSqlRaw($"SELECT ID, NOME, ENDERECOID FROM CINEMAS WHERE CINEMA.ENDERECOID = {enderecoId}").ToList());
         }
 
         /// <summary>

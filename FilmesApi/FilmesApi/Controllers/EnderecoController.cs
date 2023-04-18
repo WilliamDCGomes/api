@@ -49,7 +49,7 @@ namespace FilmesApi.Controllers
         [Route("RecuperaEnderecos")]
         public IEnumerable<ReadEnderecoDto> RecuperaEnderecos([FromQuery] int skip = 0, [FromQuery] int take = 10)
         {
-            return _mapper.Map<List<ReadEnderecoDto>>(_context.Enderecos.Skip(skip).Take(take));
+            return _mapper.Map<List<ReadEnderecoDto>>(_context.Enderecos.Skip(skip).Take(take).ToList());
         }
 
         /// <summary>

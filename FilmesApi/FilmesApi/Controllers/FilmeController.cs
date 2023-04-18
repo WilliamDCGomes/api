@@ -43,13 +43,16 @@ namespace FilmesApi.Controllers
         /// </summary>
         /// <param name="skip"></param>
         /// <param name="take"></param>
+        /// <param name="nomeCinema"></param>
         /// <returns>IEnumerable</returns>
         /// <response code="200">Caso a requisição seja feita com sucesso</response>
         [HttpGet()]
         [Route("RecuperaFilmes")]
-        public IEnumerable<ReadFilmeDto> RecuperaFilmes([FromQuery] int skip = 0, [FromQuery] int take = 10)
+        public IEnumerable<ReadFilmeDto> RecuperaFilmes([FromQuery] int skip = 0, [FromQuery] int take = 10, [FromQuery] string? nomeCinema = null)
         {
-            return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take));
+            if(string.IsNullOrEmpty(nomeCinema)) return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take).ToList());
+
+            return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take).Where(filme => filme.Sessoes.Any(sessao => sessao.Cinema.Nome.StartsWith(nomeCinema))).ToList());
         }
 
         /// <summary>

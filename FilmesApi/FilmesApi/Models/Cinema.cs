@@ -11,5 +11,6 @@ namespace FilmesApi.Models
         public String Nome { get; set; }
         public Guid EnderecoId { get; set; }
         public virtual Endereco Endereco { get; set; }
+        public virtual ICollection<Sessao> Sessoes { get; set; }
     }
 }
